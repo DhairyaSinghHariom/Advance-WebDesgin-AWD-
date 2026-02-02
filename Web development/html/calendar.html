@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>12 Month Calendar</title>
+
+</head>
+<body>
+  <h1>12-Month Calendar</h1>
+  <div class="calendar" id="calendar"></div>
+
+  <script>
+    const calendar = document.getElementById("calendar");
+    const months = [
+      "January","February","March","April","May","June",
+      "July","August","September","October","November","December"
+    ];
+    const year = new Date().getFullYear();
+
+    function generateMonth(month, year) {
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      let html = `<div class="month"><h2>${months[month]} ${year}</h2>`;
+      html += "<table><tr>";
+      const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+      days.forEach(d => html += `<th>${d}</th>`);
+      html += "</tr><tr>";
+
+      // empty cells before first day
+      for (let i = 0; i < firstDay; i++) {
+        html += `<td class="empty"></td>`;
+      }
+
+      // days
+      for (let day = 1; day <= daysInMonth; day++) {
+        const currentDay = new Date(year, month, day).getDay();
+        html += `<td>${day}</td>`;
+        if (currentDay === 6 && day !== daysInMonth) {
+          html += "</tr><tr>";
+        }
+      }
+
+      html += "</tr></table></div>";
+      return html;
+    }
+
+    for (let m = 0; m < 12; m++) {
+      calendar.innerHTML += generateMonth(m, year);
+    }
+  </script>
+</body>
+</html>

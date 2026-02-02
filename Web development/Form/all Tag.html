@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>All Tags — Beautiful Demo</title>
+
+  <!-- Minimal, modern styles -->
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0b74de;
+      --glass: rgba(255,255,255,0.6);
+      --radius:12px;
+      color-scheme: light dark;
+      --shadow: 0 8px 30px rgba(9,30,66,0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1220;
+        --card:#0f1724;
+        --muted:#9aa4b2;
+        --accent:#4aa3ff;
+        --glass: rgba(255,255,255,0.03);
+        --shadow: 0 10px 30px rgba(2,6,23,0.6);
+      }
+      body { color: #e6eef8; }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; background:linear-gradient(180deg,var(--bg),#e9f0ff10); -webkit-font-smoothing:antialiased;}
+    .wrap{max-width:1100px; margin:36px auto; padding:24px;}
+    header.site{
+      display:flex; align-items:center; justify-content:space-between; gap:18px;
+      background:linear-gradient(90deg,var(--accent),#2fb0ff);
+      padding:18px; border-radius:16px; box-shadow:var(--shadow); color:white;
+    }
+    .brand{display:flex; align-items:center; gap:12px;}
+    .logo{
+      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,#fff6,#ffffff22);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent); font-size:18px;
+      box-shadow:inset 0 -6px 18px rgba(255,255,255,0.08);
+    }
+    nav.primary a{color:white; text-decoration:none; margin-left:12px; font-weight:600; opacity:.95}
+    .layout{display:grid; grid-template-columns: 2fr 1fr; gap:20px; margin-top:20px;}
+    @media(max-width:880px){ .layout{grid-template-columns:1fr} header.site{flex-direction:column; align-items:start} nav.primary{margin-top:8px}}
+    .card{background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); overflow:hidden}
+    h1,h2,h3{margin:0 0 8px 0}
+    p.lead{color:var(--muted); margin:0 0 12px 0}
+    hr.soft{border:none;border-top:1px solid #eef3ff; margin:16px 0}
+    @media (prefers-color-scheme: dark){ hr.soft{border-top:1px solid #142033} }
+
+    /* lists & table */
+    ul.clean{padding-left:1.1rem}
+    table{width:100%; border-collapse:collapse; margin-top:12px; border-radius:8px; overflow:hidden}
+    th,td{padding:10px 12px; text-align:left; border-bottom:1px dashed rgba(0,0,0,0.06)}
+    @media (prefers-color-scheme: dark){ th,td{border-bottom:1px dashed rgba(255,255,255,0.03)} }
+
+    /* form */
+    label{display:block; font-size:0.92rem; margin-top:10px; color:var(--muted)}
+    input[type="text"], input[type="number"], select, textarea{
+      width:100%; padding:10px 12px; margin-top:6px; border-radius:8px; border:1px solid rgba(15,23,42,0.06);
+      background:linear-gradient(180deg,var(--glass),transparent);
+    }
+    textarea{min-height:84px; resize:vertical}
+    .row{display:flex; gap:12px}
+    .row .col{flex:1}
+    .btn{
+      display:inline-block; margin-top:12px; padding:10px 14px; border-radius:10px; border:none;
+      background:var(--accent); color:white; font-weight:700; cursor:pointer;
+      box-shadow: 0 6px 18px rgba(11,116,222,0.18);
+    }
+    .muted{color:var(--muted)}
+    .meta{font-size:.9rem;color:var(--muted); margin-top:8px}
+
+    /* small utilities */
+    .status{background:linear-gradient(90deg,#fff9e6,#fff); padding:10px;border-radius:10px; border:1px solid #ffe9b0; color:#7a5b04}
+    @media (prefers-color-scheme: dark){ .status{background:linear-gradient(90deg,#1a2a3a,#07101a); color:#ffd66b; border:1px solid rgba(255,215,120,0.06)} }
+
+    /* footer *
+    footer.site{margin-top:18px; text-align:center; color:var(--muted); font-size:.95rem}
+    /* small responsive tweaks */
+    .hero{display:flex; gap:18px; align-items:center}
+    .hero .intro{flex:1}
+    .hero .image{width:160px; height:96px; border-radius:10px; background:linear-gradient(135deg,#e6f3ff,#dbefff); display:flex; align-items:center; justify-content:center; color:var(--accent); font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">HTML</div>
+        <div>
+          <div style="font-weight:800; font-size:1.15rem">All Tags — Beautiful Demo</div>
+          <div style="font-size:.9rem; color:rgba(255,255,255,0.9)">Clean, responsive, accessible single-file example</div>
+        </div>
+      </div>
+
+      <nav class="primary" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="layout" id="home" role="main">
+      <!-- main column -->
+      <section class="card" aria-labelledby="tagsTitle">
+        <div class="hero">
+          <div class="intro">
+            <h1 id="tagsTitle">Tag Examples</h1>
+            <p class="lead">A beautiful showcase of common HTML tags, semantic layout, lists, tables, and a friendly form — all in one page.</p>
+            <div class="meta">Tip: Press <strong>Tab</strong> to navigate the form. This page has a subtle dark-mode supported by your system.</div>
+          </div>
+          <div class="image" aria-hidden="true">IMG</div>
+        </div>
+
+        <hr class="soft">
+
+        <div class="status" role="status" aria-live="polite">
+          <strong>No Internet</strong> — Try checking your cables, modem/router, reconnecting Wi-Fi, or run network diagnostics. Error: <code>ERR_INTERNET_DISCONNECTED</code>
+        </div>
+
+        <hr class="soft">
+
+        <p><strong>modem and router</strong></p>
+
+        <p><i>hello world</i> — <em>hello world</em> — <u>hello world</u> — <small class="muted">small note</small></p>
+
+        <h2>Lists</h2>
+        <ul class="clean">
+          <li>hello</li>
+          <li>world</li>
+        </ul>
+
+        <h2>Definitions</h2>
+        <dl>
+          <dt>hello</dt>
+          <dd class="muted">world</dd>
+        </dl>
+
+        <h2>Ordered Steps</h2>
+        <ol>
+          <li>hello</li>
+          <li>sello</li>
+        </ol>
+
+        <h2>Data Table</h2>
+        <table aria-describedby="peopleCaption">
+          <caption id="peopleCaption" class="muted">Sample people data</caption>
+          <thead>
+            <tr><th scope="col">Name</th><th scope="col">Age</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>john</td><td>20</td></tr>
+            <tr><td>doe</td><td>25</td></tr>
+            <tr><td>jane</td><td>28</td></tr>
+          </tbody>
+        </table>
+
+        <hr class="soft">
+
+        <article aria-labelledby="articleTitle">
+          <h2 id="articleTitle">Article Heading</h2>
+          <p>This is an example of an <code>&lt;article&gt;</code> used for a self-contained piece of content.</p>
+        </article>
+
+        <footer class="muted" style="margin-top:14px">© 2024 My Website — demo only</footer>
+      </section>
+
+      <!-- sidebar -->
+      <aside class="card" aria-labelledby="formTitle">
+        <h2 id="formTitle">Quick Contact Form</h2>
+        <p class="muted">Submit (demo): simple client-side validation included.</p>
+
+        <form id="contactForm" action="#" novalidate>
+          <label for="fullName">Full name</label>
+          <input id="fullName" name="fullName" type="text" placeholder="Jane Doe" required>
+
+          <div class="row">
+            <div class="col">
+              <label for="age">Age</label>
+              <input id="age" name="age" type="number" min="0" max="120" placeholder="30">
+            </div>
+            <div class="col">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender">
+                <option value="">Choose...</option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="bio">Short bio</label>
+          <textarea id="bio" name="bio" placeholder="Tell us something..."></textarea>
+
+          <button class="btn" type="submit">Submit</button>
+          <button class="btn" type="reset" style="background:#e6eefc; color:var(--accent); box-shadow:none; margin-left:8px">Reset</button>
+        </form>
+
+        <hr class="soft">
+
+        <h3 style="margin:6px 0">Useful</h3>
+        <p class="muted">Press <strong>Insert</strong> to toggle overwrite mode (box cursor) if your cursor looks odd in editors like VS Code.</p>
+      </aside>
+    </main>
+
+    <footer class="site muted" role="contentinfo">
+      Built with ♥ — single-file HTML demo • © 2024
+    </footer>
+  </div>
+
+  <!-- tiny script for form behaviour -->
+  <script>
+    (function(){
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = form.fullName.value.trim();
+        if(!name){
+          alert('Please enter your full name.');
+          form.fullName.focus();
+          return;
+        }
+        // demo success
+        alert('Thanks, ' + name + '! (This demo does not submit to a server.)');
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
