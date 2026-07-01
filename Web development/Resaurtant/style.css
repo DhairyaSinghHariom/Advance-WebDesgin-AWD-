@@ -1,0 +1,74 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background-image:url("https://media.istockphoto.com/id/610041376/photo/beautiful-sunrise-over-the-sea.jpg?s=612x612&w=0&k=20&c=R3Tcc6HKc1ixPrBc7qXvXFCicm8jLMMlT99MfmchLNA=");
+    background-size:cover;
+    background-position:center;
+}
+
+h1{
+    color:white;
+    margin-bottom:20px;
+    font-size:40px;
+}
+
+.container{
+    width:380px;
+    background:rgba(255,255,255,0.9);
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+.container h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.container input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.container button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    background:#007BFF;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.container button:hover{
+    background:#0056b3;
+}
+
+.container p{
+    text-align:center;
+    margin-top:15px;
+}
+
+.container a{
+    color:#007BFF;
+    text-decoration:none;
+}
+
+.container a:hover{
+    text-decoration:underline;
+}
